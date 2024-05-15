@@ -117,6 +117,26 @@
         <artifactId>jetty-maven-plugin</artifactId>
         <version>${org.eclipse.jetty.jetty-maven-plugin.version}</version>
       </plugin>
+      <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-pmd-plugin</artifactId>
+            <version>3.14.0</version> <!-- 使用最新版本 -->
+            <configuration>
+                <!-- 配置规则集 -->
+                <rulesets>
+                    <ruleset>/rulesets/java/basic.xml</ruleset>
+                    <ruleset>/rulesets/java/design.xml</ruleset>
+                </rulesets>
+            </configuration>
+            <executions>
+                <execution>
+                    <phase>verify</phase> <!-- 在哪个阶段执行 -->
+                    <goals>
+                        <goal>pmd</goal> <!-- 执行PMD -->
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
     </plugins>
   </build>
         
