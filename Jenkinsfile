@@ -5,7 +5,7 @@ pipeline {
             steps {
                 // checkout scmGit(branches: [[name: '*/master']], extensions: [],
                 // userRemoteConfigs: [[url: 'https://github.com/KAOZUOI/Teedy.git']])
-                sh 'mvn -B -DskipTests clean package'
+                sh 'mvn -B -X -DskipTests clean package'
             }
         }
 
